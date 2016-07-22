@@ -51,7 +51,7 @@
         <com.facebook.login.widget.LoginButton
             android:id="@+id/facebook_login_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_gravity="left|center_vertical" />
 
         <com.kakao.usermgmt.LoginButton
