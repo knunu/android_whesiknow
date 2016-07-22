@@ -21,6 +21,7 @@ import com.facebook.login.widget.LoginButton;
 
 import com.kakao.auth.Session;
 import com.kakao.auth.ISessionCallback;
+import com.kakao.usermgmt.response.model.UserProfile;
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
 
@@ -58,62 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         loginWithFacebook();
-
-        callback = new SessionCallback();
-        Session.getCurrentSession().addCallback(callback);
-//        Session.getCurrentSession().checkAndImplicitOpen();
-    }
-
-    private void loginWithKakao() {
-
-        Session.getCurrentSession().checkAndImplicitOpen();
-    }
-
-    private void redirectSignupActivity() {
-        final Intent intent = new Intent(this, KakaoSignupActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    private void loginWithFacebook() {
-        callbackManager = CallbackManager.Factory.create();
-
-        accessTokenTracker = new AccessTokenTracker() {
-            @Override
-            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                Log.d(TAG, "Current Token : " + currentAccessToken);
-            }
-        };
-
-        profileTracker = new ProfileTracker() {
-            @Override
-            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
-                Log.d(TAG, "Current Profile : " + currentProfile);
-            }
-        };
-
-        accessTokenTracker.startTracking();
-        profileTracker.startTracking();
-
-        fbLoginButton.setReadPermissions("public_profile", "user_friends");
-        fbLoginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                AccessToken accessToken = loginResult.getAccessToken();
-//            Profile profile = Profile.getCurrentProfile();
-                Toast.makeText(LoginActivity.this, accessToken.getUserId(), Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onCancel() {
-                Toast.makeText(LoginActivity.this, "Facebook user sign in canceled.", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
+        loginWithKakao();
     }
 
     @Override
@@ -127,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
         if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
             return;
         }
-
         super.onActivityResult(requestCode, resultCode, data);
 
         callbackManager.onActivityResult(requestCode, resultCode, data);
@@ -183,6 +128,58 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 }, 1000);
+    }
+
+    private void loginWithKakao() {
+        callback = new SessionCallback();
+        Session.getCurrentSession().addCallback(callback);
+    }
+
+    private void redirectSignupActivity() {
+        final Intent intent = new Intent(this, KakaoSignupActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void loginWithFacebook() {
+        callbackManager = CallbackManager.Factory.create();
+
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                Log.d(TAG, "Current Token : " + currentAccessToken);
+            }
+        };
+
+        profileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                Log.d(TAG, "Current Profile : " + currentProfile);
+            }
+        };
+
+        accessTokenTracker.startTracking();
+        profileTracker.startTracking();
+
+        fbLoginButton.setReadPermissions("public_profile", "user_friends");
+        fbLoginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                AccessToken accessToken = loginResult.getAccessToken();
+//            Profile profile = Profile.getCurrentProfile();
+                Toast.makeText(LoginActivity.this, accessToken.getUserId(), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(LoginActivity.this, "Facebook user sign in canceled.", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
     }
 
     public void onLoginSuccess() {

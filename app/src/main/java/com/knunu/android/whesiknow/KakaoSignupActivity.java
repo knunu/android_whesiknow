@@ -3,6 +3,7 @@ package com.knunu.android.whesiknow;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.kakao.auth.ApiResponseCallback;
 import com.kakao.auth.ErrorCode;
@@ -64,8 +65,8 @@ public class KakaoSignupActivity extends Activity {
         finish();
     }
 
-    protected void redirectLoginActivity() {
-        final Intent intent = new Intent(this, LoginActivity.class);
+    private void redirectLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
