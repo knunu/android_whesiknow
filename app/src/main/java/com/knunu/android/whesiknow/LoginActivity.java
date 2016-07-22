@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProfileTracker profileTracker;
     private SessionCallback callback;
 
+
     @BindView(R.id.input_email) EditText emailText;
     @BindView(R.id.input_password) EditText passwordText;
     @BindView(R.id.facebook_login_button) LoginButton fbLoginButton;

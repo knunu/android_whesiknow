@@ -28,4 +28,8 @@
 
     <string name="facebook_app_id">1212008215510398</string>
     <string name="kakao_app_key">ad05d6607e99dd1200cb5361e8e936e4</string>
+
+    <string name="title_activity_intro">IntroActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
