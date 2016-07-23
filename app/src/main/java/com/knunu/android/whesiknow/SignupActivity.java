@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
@@ -32,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signup();
+                signUp();
             }
         });
 
@@ -45,11 +48,11 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    public void signup() {
+    public void signUp() {
         Log.d(TAG, "Signup");
 
         if (!validate()) {
-            onSignupFailed();
+            onSignUpFailed();
             return;
         }
 
@@ -61,34 +64,39 @@ public class SignupActivity extends AppCompatActivity {
         progressDialog.setMessage("계정 생성중...");
         progressDialog.show();
 
-        String name = nameText.getText().toString();
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
-        String confirm_password = confirmPasswordText.getText().toString();
+        String name = nameText.getText().toString();
 
         // TODO: Implement your own signup logic here.
+        Call<User> userObejctCall = RestfulAdapter.getInstance().postUser(email, Constant.APP, password, name);
+        userObejctCall.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                // if connection succeeded
+                User user = response.body();
+                Log.d(TAG, user.toString());
+                onSignUpSuccess();
+                progressDialog.dismiss();
+            }
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onSignupSuccess or onSignupFailed
-                        // depending on success
-                        onSignupSuccess();
-                        // onSignupFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                // if connection failed
+                t.printStackTrace();
+            }
+        });
     }
 
 
-    public void onSignupSuccess() {
+    public void onSignUpSuccess() {
         signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
         finish();
     }
 
-    public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "로그인 실패", Toast.LENGTH_LONG).show();
+    public void onSignUpFailed() {
+        Toast.makeText(getBaseContext(), "회원가입 실패", Toast.LENGTH_LONG).show();
 
         signupButton.setEnabled(true);
     }

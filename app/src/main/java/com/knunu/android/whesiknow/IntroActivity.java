@@ -82,11 +82,10 @@ public class IntroActivity extends AppCompatActivity {
             {
                 intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         }, 2000);
     }
-
-
 
 
     @Override
