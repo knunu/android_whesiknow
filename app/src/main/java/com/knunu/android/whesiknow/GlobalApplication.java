@@ -6,6 +6,8 @@ package com.knunu.android.whesiknow;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.kakao.auth.KakaoSDK;
 
@@ -19,6 +21,12 @@ public class GlobalApplication extends Application {
         instance = this;
 
         KakaoSDK.init(new KakaoSDKAdapter());
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     @Override

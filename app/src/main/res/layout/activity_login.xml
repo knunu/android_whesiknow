@@ -50,6 +50,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <!-- Login Button -->
+
         <com.facebook.login.widget.LoginButton
             android:id="@+id/facebook_login_button"
             android:layout_width="match_parent"

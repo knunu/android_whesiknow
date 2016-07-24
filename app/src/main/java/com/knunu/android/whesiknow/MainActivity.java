@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences(Constant.USER, MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         backPressCloseHandler = new BackPressCloseHandler(this);
@@ -132,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.drawer_logout:
                         editor.clear();
+                        editor.commit();
                         logout(login_group);
                         break;
                 }

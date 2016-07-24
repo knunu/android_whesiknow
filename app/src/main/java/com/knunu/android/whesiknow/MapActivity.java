@@ -7,16 +7,27 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,7 +38,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @BindView(R.id.map_find_toolbar) Toolbar toolbar;
     @BindView(R.id.map_search_view) SearchView searchView;
 
-    static final LatLng SEOUL = new LatLng(37.5610412, 127.0267999);
+    static final LatLng SEOUL = new LatLng(37.523824, 126.963499);
     private GoogleMap googleMap;
 
     @Override
@@ -78,13 +89,54 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             return;
         }
         googleMap.setMyLocationEnabled(true);
+        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
 
-        Marker seoul = googleMap.addMarker(new MarkerOptions().position(SEOUL)
-                .title("Seoul"));
+                marker.showInfoWindow();
+                return true;
+            }
+        });
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom( SEOUL, 15));
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
 
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+            }
+        });
+
+        List<Map> markerMapList = new ArrayList<>();
+
+        markerMapList.add(new HashMap<String, String>());
+
+//        Marker marker = googleMap.addMarker(new MarkerOptions().position(SEOUL)
+//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom( SEOUL, 15));
+//        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+//
+//        Marker marker2 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.524984, 126.965882))
+//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+//
+//        Marker marker3 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.520803, 126.9614283))
+//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+//
+//        Marker marker4 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.527588, 126.969020))
+//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+//
+//        Marker marker5 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.526280, 126.957579))
+//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+//
+//        Map<String, String> valueMap = new HashMap<>();
+//        valueMap.put("iw_label", "윤재네 닭갈비");
+//        valueMap.put("iw_label2", "02-2220-4886");
+//        valueMap.put("iw_label3", "★★★★★ / 5");
+
+//        Map<Marker, Map<String, String>> markerMap = new HashMap<>();
+//        markerMap.put(marker, valueMap);
+
+//        googleMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(markerMap));
+
+
     }
 
     private void setSearchView(android.widget.SearchView searchView) {
@@ -92,5 +144,56 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         EditText searchEditText = (EditText) searchView.findViewById(id);
         searchEditText.setTextColor(Color.WHITE);
         searchEditText.setHintTextColor(Color.WHITE);
+    }
+
+    public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter
+    {
+        private Map<Marker, Map<String, String>> valueMap;
+
+        public MarkerInfoWindowAdapter(Map<Marker, Map<String, String>> valueMap)
+        {
+            this.valueMap = valueMap;
+        }
+
+        public MarkerInfoWindowAdapter()
+        {
+
+        }
+
+        @Override
+        public View getInfoWindow(Marker marker)
+        {
+            return null;
+        }
+
+        @Override
+        public View getInfoContents(Marker marker)
+        {
+            View v  = getLayoutInflater().inflate(R.layout.info_window, null);
+
+            TextView iw_label = (TextView) v.findViewById(R.id.iw_textView);
+            TextView iw_label2 = (TextView)v.findViewById(R.id.iw_textView2);
+            TextView iw_label3 = (TextView)v.findViewById(R.id.iw_textView3);
+            Button iw_button = (Button)v.findViewById(R.id.iw_button);
+            Button iw_button2 = (Button)v.findViewById(R.id.iw_button2);
+
+            iw_label.setText(valueMap.get(marker).get("iw_label"));
+            iw_label2.setText(valueMap.get(marker).get("iw_label2"));
+            iw_label3.setText(valueMap.get(marker).get("iw_label3"));
+            iw_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            iw_button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+            return v;
+        }
     }
 }
