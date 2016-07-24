@@ -63,11 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.login_button) void onLogin() {
         login();
     }
-    @OnClick(R.id.link_signup) void onSignup() {
-        // Start the signup activity
-        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-        startActivityForResult(intent, REQUEST_SIGNUP);
-    }
+    @OnClick(R.id.link_signup) void onSignup() { signUp(); }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,6 +167,12 @@ public class LoginActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
+    }
+
+    private void signUp() {
+        // Start the signup activity
+        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+        startActivityForResult(intent, REQUEST_SIGNUP);
     }
 
     private void onLoginSuccess() {

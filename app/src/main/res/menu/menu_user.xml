@@ -7,8 +7,7 @@
         <item android:id="@+id/drawer_home" android:title="@string/home" />
         <item android:id="@+id/drawer_reservation" android:title="@string/reservation" />
         <item android:id="@+id/drawer_personal_data" android:title="@string/personal_data" />
-        <item android:id="@+id/action_settings" android:title="@string/action_settings"
-            android:orderInCategory="100" app:showAsAction="never" />
-        <item android:id="@+id/drawer_login_logout" android:title="로그인 / 로그아웃" />
+        <item android:id="@+id/drawer_settings" android:title="@string/settings" />
+        <item android:id="@+id/drawer_logout" android:title="@string/logout" />
     </group>
 </menu>

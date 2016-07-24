@@ -13,11 +13,9 @@ import android.view.ViewGroup;
  */
 public class GetTogetherFragment extends Fragment {
 
-
     public GetTogetherFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,6 +23,5 @@ public class GetTogetherFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_get_together, container, false);
     }
-
 
 }

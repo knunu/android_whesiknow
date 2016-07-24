@@ -17,8 +17,7 @@ import butterknife.Unbinder;
  */
 public class ThemeFragment extends Fragment {
 
-    @BindView(R.id.find_button)
-    Button button;
+//    @BindView(R.id.find_button) Button button;
     private Unbinder unbinder;
 
     public ThemeFragment() {
@@ -34,16 +33,16 @@ public class ThemeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_theme, container, false);
-        unbinder = ButterKnife.bind(this, view);
+//        unbinder = ButterKnife.bind(this, view);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the find activity
-                Intent intent = new Intent(getActivity(), FindActivity.class);
-                startActivity(intent);
-            }
-        });
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Start the find activity
+//                Intent intent = new Intent(getActivity(), FindActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         return view;
     }
@@ -51,6 +50,6 @@ public class ThemeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        unbinder.unbind();
     }
 }

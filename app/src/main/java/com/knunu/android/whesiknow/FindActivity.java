@@ -61,23 +61,23 @@ public class FindActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         List<ExpandableListAdapter.Item> data = new ArrayList<>();
 
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "지역"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "서울"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "경기"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "대전"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "대구"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "부산"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "울산"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음식 종류"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "한식"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "중식"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "양식"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "일식"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "지역"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "서울"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "경기"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "대전"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "대구"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "부산"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "울산"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음식 종류"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "한식"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "중식"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "양식"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "일식"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
+//        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
 
         recyclerView.setAdapter(new ExpandableListAdapter(data));
     }

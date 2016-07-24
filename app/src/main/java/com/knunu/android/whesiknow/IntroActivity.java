@@ -1,6 +1,7 @@
 package com.knunu.android.whesiknow;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +13,9 @@ public class IntroActivity extends AppCompatActivity {
     /**
      * Whether or not the system UI should be auto-hidden after
      */
-    Intent intent;
+    private Intent intent;
+    private SharedPreferences sharedPreferences;
+    private String login_group;
 
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
@@ -62,6 +65,12 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPreferences = getSharedPreferences(Constant.USER, MODE_PRIVATE);
+        if (sharedPreferences == null) {
+            login_group = null;
+        } else {
+            login_group = sharedPreferences.getString("login_group", null);
+        }
 
         setContentView(R.layout.activity_intro);
 
@@ -80,7 +89,12 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run()
             {
-                intent = new Intent(getApplicationContext(), LoginActivity.class);
+                if (login_group == null || login_group.equals(null)) {
+                    intent = new Intent(getApplicationContext(), LoginActivity.class);
+                } else {
+                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                }
+
                 startActivity(intent);
                 finish();
             }
