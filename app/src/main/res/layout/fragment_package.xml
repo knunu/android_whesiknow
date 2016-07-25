@@ -6,144 +6,86 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="검색하기"-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_gravity="center_horizontal" />-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="검색하기"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal" />
 
-    <include layout="@layout/fragment_comming_soon"> </include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
 
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/scrollView" >-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!--<LinearLayout-->
-            <!--android:orientation="vertical"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일본이 가고싶을 땐~~~"
+                android:textStyle="bold"
+                android:fontFamily=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:layout_margin="3dp"
+                android:textSize="15dp"
+                android:id="@+id/textView" />
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="예시 패키지"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView" />-->
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="400dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/pkg1"
+                        android:layout_gravity="center_horizontal" />
 
-            <!--<HorizontalScrollView-->
-                <!--android:id="@+id/theme_view"-->
-                <!--android:scrollbars="@null"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
 
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/theme_layer"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="horizontal">-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="우리네 전통을 찾아서~~"
+                android:fontFamily=""
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_margin="3dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"></TextView>
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/imageView2"-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
+                    <ImageView
+                        android:layout_width="400dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/pkg2"
+                        android:layout_gravity="center_horizontal" />
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/imageView3"-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/imageView4"-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-                <!--</LinearLayout>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고급스러운 분위기를 즐겨볼까?"
+                android:fontFamily=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_margin="3dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"></TextView>
 
-            <!--</HorizontalScrollView>-->
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="예시 페키지2"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"></TextView>-->
+                    <ImageView
+                        android:layout_width="400dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/pkg3"
+                        android:layout_gravity="center_horizontal" />
 
-            <!--<HorizontalScrollView-->
-                <!--android:scrollbars="@null"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
 
-                <!--<LinearLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="horizontal">-->
+        </LinearLayout>
 
-                    <!--<ImageView-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-                <!--</LinearLayout>-->
-
-            <!--</HorizontalScrollView>-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="예시 패키지3"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"></TextView>-->
-
-            <!--<HorizontalScrollView-->
-                <!--android:scrollbars="@null"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-
-                <!--<LinearLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="horizontal">-->
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="400dp"-->
-                        <!--android:layout_height="150dp"-->
-                        <!--android:src="@drawable/main_logo" />-->
-                <!--</LinearLayout>-->
-
-            <!--</HorizontalScrollView>-->
-
-        <!--</LinearLayout>-->
-
-    <!--</ScrollView>-->
+    </ScrollView>
 
 </LinearLayout>

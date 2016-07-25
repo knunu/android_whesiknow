@@ -32,6 +32,9 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Need to be fixed
+ */
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -109,11 +112,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         markerMapList.add(new HashMap<String, String>());
 
-//        Marker marker = googleMap.addMarker(new MarkerOptions().position(SEOUL)
-//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom( SEOUL, 15));
-//        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
-//
+        Marker marker = googleMap.addMarker(new MarkerOptions().position(SEOUL)
+                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom( SEOUL, 15));
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+
 //        Marker marker2 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.524984, 126.965882))
 //                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
 //
@@ -125,16 +128,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 //
 //        Marker marker5 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.526280, 126.957579))
 //                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
-//
-//        Map<String, String> valueMap = new HashMap<>();
-//        valueMap.put("iw_label", "윤재네 닭갈비");
-//        valueMap.put("iw_label2", "02-2220-4886");
-//        valueMap.put("iw_label3", "★★★★★ / 5");
 
-//        Map<Marker, Map<String, String>> markerMap = new HashMap<>();
-//        markerMap.put(marker, valueMap);
+        Map<String, String> valueMap = new HashMap<>();
+        valueMap.put("iw_label", "윤재네 닭갈비");
+        valueMap.put("iw_label2", "02-2220-4886");
+        valueMap.put("iw_label3", "★★★★★ / 5");
 
-//        googleMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(markerMap));
+        Map<Marker, Map<String, String>> markerMap = new HashMap<>();
+        markerMap.put(marker, valueMap);
+
+        googleMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(markerMap));
 
 
     }

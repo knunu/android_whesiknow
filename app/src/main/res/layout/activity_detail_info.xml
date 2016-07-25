@@ -23,13 +23,244 @@
             android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical"
+        tools:context="com.knunu.android.whesiknow.DetailInfoActivity"
+        android:paddingRight="5dp">
 
-    <include layout="@layout/content_detail_info" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_map" />
+            <ScrollView
+                android:layout_width="195dp"
+                android:layout_height="140dp"
+                android:id="@+id/storeInfo"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="전화번호: 02-2012-0700"
+                        android:id="@+id/phone"
+                        android:textColor="@color/abc_primary_text_material_light"
+                        android:layout_margin="3dp"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="주소: 서울 용산구 한강대로 39길 15"
+                        android:id="@+id/location"
+                        android:textColor="@color/abc_primary_text_material_light"
+                        android:layout_margin="3dp"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="영업시간: 11:00 ~22:00"
+                        android:id="@+id/time"
+                        android:textColor="@color/abc_primary_text_material_light"
+                        android:layout_margin="3dp"
+                        android:textSize="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="총 좌석 수: 60석"
+                        android:id="@+id/seat"
+                        android:textColor="@color/abc_primary_text_material_light"
+                        android:layout_margin="3dp"
+                        android:textSize="16dp"/>
+                </LinearLayout>
+            </ScrollView>
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:id="@+id/imageView5"
+                android:src="@drawable/kalbi"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp" />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="주요메뉴"
+            android:id="@+id/me"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:textColor="#B2CCFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:id="@+id/info"
+            android:layout_margin="5dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="숯불닭갈비---11000원"
+                    android:id="@+id/menu"
+                    android:textColor="@color/abc_primary_text_material_light"
+                    android:layout_margin="3dp"
+                    android:textSize="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="양념닭갈비---11000원"
+                    android:id="@+id/menu2"
+                    android:textColor="@color/abc_primary_text_material_light"
+                    android:layout_margin="3dp"
+                    android:textSize="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="치즈닭갈비---12000원"
+                    android:id="@+id/menu3"
+                    android:textColor="@color/abc_primary_text_material_light"
+                    android:layout_margin="3dp"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="실제 이용자들의 리뷰"
+            android:id="@+id/re"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:textColor="#B2CCFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/review"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★★★☆ 짱이예요 내일 또 와야지 강추~"
+                    android:id="@+id/review1"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★★★★ 또 오고싶어요 "
+                    android:id="@+id/review2"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★★☆☆ 너무 맛있어요!!!"
+                    android:id="@+id/review3"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★☆☆☆ 별로였어요ㅜ 종업원이 불친절해요"
+                    android:id="@+id/review4"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★★★☆ 와 값도 싸고 맛있고 최고 맛집!"
+                    android:id="@+id/review5"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★★☆☆ 좀 짜요 짜게 먹으면 건강에 안 좋은데"
+                    android:id="@+id/review6"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="★★★★★ 우와 이런 맛집이~~~~~"
+                    android:id="@+id/review7"
+                    android:textSize="16dp"
+                    android:textColor="@color/abc_primary_text_material_light" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="예약하기"
+            android:id="@+id/reserve"
+            android:layout_marginLeft="250dp" />
+
+
+    </LinearLayout>
+
 
     </LinearLayout>
 </ScrollView>

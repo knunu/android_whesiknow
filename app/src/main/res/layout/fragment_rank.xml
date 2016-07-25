@@ -3,107 +3,117 @@
     android:id="@+id/linear_layout"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="검색하기"-->
-        <!--android:id="@+id/button" />-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="검색하기"
+        android:id="@+id/button" />
 
-    <include layout="@layout/fragment_comming_soon"> </include>
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="랭킹 보기(기준: 별점순/이용자순 선택 가능)"-->
-        <!--android:id="@+id/button2"-->
-        <!--android:layout_gravity="center_horizontal" />-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="랭킹 보기(기준: 별점순/이용자순 선택 가능)"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal" />
 
 
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/scrollView" >-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
 
-        <!--<LinearLayout-->
-            <!--android:orientation="vertical"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="1위 식당 이름 (이름 or 그림 클릭하면 식당 정보 이동)"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView" />-->
-            <!--<ImageView-->
-                <!--android:id="@+id/imageView"-->
-                <!--android:layout_width="400dp"-->
-                <!--android:layout_height="100dp"-->
-                <!--android:src="@drawable/main_logo" />-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1위 선우네 족발"
+                android:fontFamily=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:layout_margin="3dp"
+                android:textStyle="bold"
+                android:id="@+id/textView" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="400dp"
+                android:layout_height="150dp"
+                android:src="@drawable/rank2"
+                android:layout_gravity="center_horizontal" />
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="2위 식당 이름 (이름 or 그림 클릭하면 식당 정보 이동)"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView2" />-->
-            <!--<ImageView-->
-                <!--android:id="@+id/imageView2"-->
-                <!--android:layout_width="400dp"-->
-                <!--android:layout_height="100dp"-->
-                <!--android:src="@drawable/main_logo" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2위 수민이 콩불"
+                android:fontFamily=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:layout_margin="3dp"
+                android:textStyle="bold"
+                android:id="@+id/textView2"
+                android:paddingTop="10dp" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="400dp"
+                android:layout_height="150dp"
+                android:src="@drawable/rank3"
+                android:layout_gravity="center_horizontal" />
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="3위 식당 이름 (이름 or 그림 클릭하면 식당 정보 이동)"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView3" />-->
-            <!--<ImageView-->
-                <!--android:id="@+id/imageView3"-->
-                <!--android:layout_width="400dp"-->
-                <!--android:layout_height="100dp"-->
-                <!--android:src="@drawable/main_logo" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3위 윤재네 닭갈비"
+                android:fontFamily=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="3dp"
+                android:id="@+id/textView3"
+                android:paddingTop="10dp" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="400dp"
+                android:layout_height="150dp"
+                android:src="@drawable/rank1"
+                android:layout_gravity="center_horizontal" />
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="4위 식당 이름 (4위부터는 이름만 하면 어떨까욥)"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView4" />-->
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="5위 식당 이름"-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView5" />-->
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="6위 식당 이름 "-->
-                <!--android:fontFamily=""-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:textColor="@color/primary"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:id="@+id/textView6" />-->
-        <!--</LinearLayout>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4위 원경쓰 치맥"
+                android:fontFamily=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:layout_margin="3dp"
+                android:textStyle="bold"
+                android:id="@+id/textView4" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5위 용산보쌈"
+                android:fontFamily=""
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:layout_margin="3dp"
+                android:id="@+id/textView5" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6위 FC삼겹살"
+                android:fontFamily=""
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:layout_margin="3dp"
+                android:id="@+id/textView6" />
+        </LinearLayout>
 
-    <!--</ScrollView>-->
+    </ScrollView>
 
 </LinearLayout>

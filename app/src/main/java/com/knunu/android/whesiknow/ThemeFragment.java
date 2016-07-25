@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -17,7 +18,7 @@ import butterknife.Unbinder;
  */
 public class ThemeFragment extends Fragment {
 
-//    @BindView(R.id.find_button) Button button;
+    @OnClick(R.id.main_find_button) void onClick() { find(); }
     private Unbinder unbinder;
 
     public ThemeFragment() {
@@ -33,7 +34,7 @@ public class ThemeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_theme, container, false);
-//        unbinder = ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
 
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -50,6 +51,10 @@ public class ThemeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        unbinder.unbind();
+        unbinder.unbind();
+    }
+
+    private void find() {
+        startActivity(new Intent(getActivity(), FindActivity.class));
     }
 }
