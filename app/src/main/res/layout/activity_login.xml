@@ -58,39 +58,35 @@
 
         <!-- Login Button -->
 
+
+
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp">
+
             <com.facebook.login.widget.LoginButton
-                android:id="@+id/real_facebook_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
-            <ImageButton
                 android:id="@+id/facebook_login_button"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:src="@drawable/facebook_login_button"
-                android:background="@color/accent" />
+                android:layout_height="match_parent"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:textSize="16sp"/>
+
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp">
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp">
 
             <com.kakao.usermgmt.LoginButton
-                android:id="@+id/real_kakao_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
-
-            <ImageButton
                 android:id="@+id/kakao_login_button"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:src="@drawable/kakao_login_button"
-                android:background="@color/accent" />
+                android:layout_height="match_parent" />
 
         </FrameLayout>
 

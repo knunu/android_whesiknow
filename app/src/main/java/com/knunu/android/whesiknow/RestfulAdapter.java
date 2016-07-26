@@ -96,7 +96,7 @@ public class RestfulAdapter {
                 }
             };
 
-            builder.sslSocketFactory(ctx.getSocketFactory()).hostnameVerifier(hostnameVerifier);
+            builder.sslSocketFactory(ctx.getSocketFactory(), (X509TrustManager) certs[0]).hostnameVerifier(hostnameVerifier);
         } catch (final Exception e) {
             e.printStackTrace();
         }
@@ -104,3 +104,17 @@ public class RestfulAdapter {
         return builder;
     }
 }
+
+
+//    @Test
+//    public void givenAcceptingAllCertificatesUsing4_4_whenHttpsUrlIsConsumed_thenCorrect()
+//            throws ClientProtocolException, IOException {
+//            CloseableHttpClient httpClient =
+//              HttpClients.custom()
+//                         .setSSLHostnameVerifier(new NoopHostnameVerifier())
+//                         .build();
+//         
+//            HttpGet getMethod = new HttpGet(urlOverHttps);
+//            HttpResponse response = httpClient.execute(getMethod);
+//            assertThat(response.getStatusLine().getStatusCode(), equalTo(200));
+//    }

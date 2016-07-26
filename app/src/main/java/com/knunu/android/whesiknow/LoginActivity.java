@@ -57,10 +57,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.input_email) EditText emailText;
     @BindView(R.id.input_password) EditText passwordText;
-    @BindView(R.id.real_facebook_login_button) com.facebook.login.widget.LoginButton fbLoginButton;
-    @BindView(R.id.real_kakao_login_button) com.kakao.usermgmt.LoginButton kakaoLoginButton;
-    @OnClick(R.id.facebook_login_button) void onLoginWithFacebook() { fbLoginButton.performClick(); }
-    @OnClick(R.id.kakao_login_button) void onLoginWithKakao() { kakaoLoginButton.performClick(); }
+    @BindView(R.id.facebook_login_button) com.facebook.login.widget.LoginButton fbLoginButton;
+    @BindView(R.id.kakao_login_button) com.kakao.usermgmt.LoginButton kakaoLoginButton;
     @OnClick(R.id.login_button) void onLogin() {
         login();
     }
