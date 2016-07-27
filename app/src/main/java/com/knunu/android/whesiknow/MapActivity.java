@@ -1,5 +1,6 @@
 package com.knunu.android.whesiknow;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,10 +32,6 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Need to be fixed
- */
-
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @BindView(R.id.map_find_toolbar) Toolbar toolbar;
@@ -43,6 +39,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     static final LatLng SEOUL = new LatLng(37.523824, 126.963499);
     private GoogleMap googleMap;
+    private GoogleMap.OnInfoWindowClickListener windowClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,37 +106,57 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
 
         List<Map> markerMapList = new ArrayList<>();
-
         markerMapList.add(new HashMap<String, String>());
+        Map<String, String> valueMap = new HashMap<>();
+        Map<Marker, Map<String, String>> markerMap = new HashMap<>();
 
         Marker marker = googleMap.addMarker(new MarkerOptions().position(SEOUL)
-                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+                .icon(BitmapDescriptorFactory.defaultMarker(344)));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom( SEOUL, 15));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
-
-//        Marker marker2 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.524984, 126.965882))
-//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
-//
-//        Marker marker3 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.520803, 126.9614283))
-//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
-//
-//        Marker marker4 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.527588, 126.969020))
-//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
-//
-//        Marker marker5 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.526280, 126.957579))
-//                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
-
-        Map<String, String> valueMap = new HashMap<>();
+        valueMap.put("iw_image", String.valueOf(R.drawable.kalbi));
         valueMap.put("iw_label", "윤재네 닭갈비");
-        valueMap.put("iw_label2", "02-2220-4886");
-        valueMap.put("iw_label3", "★★★★★ / 5");
-
-        Map<Marker, Map<String, String>> markerMap = new HashMap<>();
+        valueMap.put("iw_label2", "02-2012-0700");
+        valueMap.put("iw_label3", "★★★★ / 20");
         markerMap.put(marker, valueMap);
 
+        Marker marker2 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.524984, 126.965882))
+                .icon(BitmapDescriptorFactory.defaultMarker(344)));
+        valueMap = new HashMap<>();
+        valueMap.put("iw_image", String.valueOf(R.drawable.zok));
+        valueMap.put("iw_label", "선우네 족발");
+        valueMap.put("iw_label2", "02-8080-1123");
+        valueMap.put("iw_label3", "★★★★★ / 100");
+        markerMap.put(marker2, valueMap);
+
+        Marker marker3 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.520803, 126.9614283))
+                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+        valueMap = new HashMap<>();
+        valueMap.put("iw_image", String.valueOf(R.drawable.chimac));
+        valueMap.put("iw_label", "원경쓰 치맥");
+        valueMap.put("iw_label2", "02-8080-1991");
+        valueMap.put("iw_label3", "★★★★★ / 75");
+        markerMap.put(marker3, valueMap);
+
+        Marker marker4 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.527588, 126.969020))
+                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+        valueMap = new HashMap<>();
+        valueMap.put("iw_image", String.valueOf(R.drawable.kong));
+        valueMap.put("iw_label", "수민의 콩불");
+        valueMap.put("iw_label2", "02-8080-0070");
+        valueMap.put("iw_label3", "★★★★★ / 57");
+        markerMap.put(marker4, valueMap);
+
+        Marker marker5 = googleMap.addMarker(new MarkerOptions().position(new LatLng(37.526280, 126.957579))
+                .title("Seoul").icon(BitmapDescriptorFactory.defaultMarker(344)));
+        valueMap = new HashMap<>();
+        valueMap.put("iw_image", String.valueOf(R.drawable.bossam));
+        valueMap.put("iw_label", "용산 보쌈");
+        valueMap.put("iw_label2", "02-8080-1123");
+        valueMap.put("iw_label3", "★★★ / 32");
+        markerMap.put(marker5, valueMap);
+
         googleMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(markerMap));
-
-
     }
 
     private void setSearchView(android.widget.SearchView searchView) {
@@ -174,25 +191,89 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         {
             View v  = getLayoutInflater().inflate(R.layout.info_window, null);
 
+            ImageView iw_image = (ImageView) v.findViewById(R.id.iw_imageView);
             TextView iw_label = (TextView) v.findViewById(R.id.iw_textView);
             TextView iw_label2 = (TextView)v.findViewById(R.id.iw_textView2);
             TextView iw_label3 = (TextView)v.findViewById(R.id.iw_textView3);
             Button iw_button = (Button)v.findViewById(R.id.iw_button);
             Button iw_button2 = (Button)v.findViewById(R.id.iw_button2);
 
-            iw_label.setText(valueMap.get(marker).get("iw_label"));
+            final String activityName = "map";
+            final String shopName = valueMap.get(marker).get("iw_label");
+
+            iw_label.setText(shopName);
+            iw_image.setImageDrawable(getDrawable(Integer.parseInt(valueMap.get(marker).get("iw_image"))));
             iw_label2.setText(valueMap.get(marker).get("iw_label2"));
             iw_label3.setText(valueMap.get(marker).get("iw_label3"));
-            iw_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
+            windowClickListener = new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(Marker marker) {
+                    Intent intent = null;
+
+                    switch (shopName) {
+                        case "윤재네 닭갈비":
+                            intent = new Intent(getApplicationContext(), DetailInfoActivity.class);
+                            break;
+                        case "선우네 족발":
+                            intent = new Intent(getApplicationContext(), DetailInfo2Activity.class);
+                            break;
+                        case "원경쓰 치맥":
+                            intent = new Intent(getApplicationContext(), DetailInfo3Activity.class);
+                            break;
+                        case "수민의 콩불":
+                            intent = new Intent(getApplicationContext(), DetailInfo4Activity.class);
+                            break;
+                        case "용산 보쌈":
+                            intent = new Intent(getApplicationContext(), DetailInfo5Activity.class);
+                            break;
+                        default:
+                            break;
+                    }
+                    intent.putExtra("activityName", activityName);
+                    intent.putExtra("shopName", shopName);
+                    startActivity(intent);
+                }
+            };
+            googleMap.setOnInfoWindowClickListener(windowClickListener);
+
+            iw_button.setOnClickListener(new View.OnClickListener() {
+                @Override // 상세 정보
+                public void onClick(View v) {
+                    Intent intent = null;
+
+                    switch (shopName) {
+                        case "윤재네 닭갈비":
+                            intent = new Intent(getApplicationContext(), DetailInfoActivity.class);
+                            break;
+                        case "선우네 족발":
+                            intent = new Intent(getApplicationContext(), DetailInfo2Activity.class);
+                            break;
+                        case "원경쓰 치맥":
+                            intent = new Intent(getApplicationContext(), DetailInfo3Activity.class);
+                            break;
+                        case "수민의 콩불":
+                            intent = new Intent(getApplicationContext(), DetailInfo4Activity.class);
+                            break;
+                        case "용산 보쌈":
+                            intent = new Intent(getApplicationContext(), DetailInfo5Activity.class);
+                            break;
+                        default:
+                            break;
+                    }
+                    intent.putExtra("activityName", activityName);
+                    intent.putExtra("shopName", shopName);
+                    startActivity(intent);
                 }
             });
-            iw_button2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
+            iw_button2.setOnClickListener(new View.OnClickListener() {
+                @Override // 예약
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), ReserveActivity.class);
+                    intent.putExtra("activityName", activityName);
+                    intent.putExtra("shopName", shopName);
+                    startActivity(intent);
                 }
             });
 

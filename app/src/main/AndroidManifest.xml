@@ -69,6 +69,22 @@
             android:name=".DetailInfoActivity"
             android:label="@string/title_activity_detail_info"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailInfo2Activity"
+            android:label="@string/title_activity_detail_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailInfo3Activity"
+            android:label="@string/title_activity_detail_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailInfo4Activity"
+            android:label="@string/title_activity_detail_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailInfo5Activity"
+            android:label="@string/title_activity_detail_info"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ReserveActivity" />
         <activity android:name=".KakaoSignupActivity" />
         <activity
@@ -82,7 +98,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SuccessActivity"></activity>
+        <activity android:name=".SuccessActivity" />
+        <activity android:name=".ConditionalReserveActivity"></activity>
     </application>
 
 </manifest>

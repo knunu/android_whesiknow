@@ -19,6 +19,31 @@ import butterknife.Unbinder;
 public class ThemeFragment extends Fragment {
 
     @OnClick(R.id.main_find_button) void onClick() { find(); }
+    @OnClick(R.id.spicy_grilled_chicken) void onSpicyGrilledChickenClick() {
+        Intent intent = new Intent(getActivity(), DetailInfoActivity.class);
+        intent.putExtra("activityName", "theme");
+        intent.putExtra("shopName", "윤재네 닭갈비");
+        startActivity(intent); }
+    @OnClick({R.id.pig_feets, R.id.pig_feets2}) void onPigsFeetClick() {
+        Intent intent = new Intent(getActivity(), DetailInfo2Activity.class);
+        intent.putExtra("activityName", "theme");
+        intent.putExtra("shopName", "선우네 족발");
+        startActivity(intent); }
+    @OnClick(R.id.chicken_beer) void onChickenBeerClick() {
+        Intent intent = new Intent(getActivity(), DetailInfo3Activity.class);
+        intent.putExtra("activityName", "theme");
+        intent.putExtra("shopName", "원경쓰 치맥");
+        startActivity(intent); }
+    @OnClick(R.id.bulgogi) void onBulgogiClick() {
+        Intent intent = new Intent(getActivity(), DetailInfo4Activity.class);
+        intent.putExtra("activityName", "theme");
+        intent.putExtra("shopName", "수민의 콩불");
+        startActivity(intent); }
+    @OnClick({R.id.bossam, R.id.bossam2, R.id.bossam3}) void onBossamClick() {
+        Intent intent = new Intent(getActivity(), DetailInfo5Activity.class);
+        intent.putExtra("activityName", "theme");
+        intent.putExtra("shopName", "용산 보쌈");
+        startActivity(intent); }
 
     private Unbinder unbinder;
 

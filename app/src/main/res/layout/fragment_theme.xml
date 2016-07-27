@@ -41,11 +41,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <include layout="@layout/image_chicken_beer"/>
+                <include layout="@layout/image_chicken_beer"
+                    android:id="@+id/chicken_beer" />
 
-                <include layout="@layout/image_pig_feets"/>
+                <include layout="@layout/image_pig_feets"
+                    android:id="@+id/pig_feets" />
 
-                <include layout="@layout/image_bossam"/>
+                <include layout="@layout/image_bossam"
+                    android:id="@+id/bossam" />
 
             </LinearLayout>
 
@@ -71,11 +74,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <include layout="@layout/image_spicy_grilled_chicken"/>
+                    <include layout="@layout/image_spicy_grilled_chicken"
+                        android:id="@+id/spicy_grilled_chicken" />
 
-                    <include layout="@layout/image_bulggogi"/>
+                    <include layout="@layout/image_bulgogi"
+                        android:id="@+id/bulgogi" />
 
-                    <include layout="@layout/image_bossam"/>
+                    <include layout="@layout/image_bossam"
+                        android:id="@+id/bossam2" />
                 </LinearLayout>
 
             </HorizontalScrollView>
@@ -100,9 +106,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <include layout="@layout/image_bossam"/>
+                    <include layout="@layout/image_bossam"
+                        android:id="@+id/bossam3" />
 
-                    <include layout="@layout/image_pig_feets"/>
+                    <include layout="@layout/image_pig_feets"
+                        android:id="@+id/pig_feets2" />
 
                 </LinearLayout>
 

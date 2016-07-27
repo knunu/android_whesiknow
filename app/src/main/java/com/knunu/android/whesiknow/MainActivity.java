@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.main_toolbar) Toolbar toolbar;
     @BindView(R.id.tabs) TabLayout tabLayout;
     @BindView(R.id.viewpager) ViewPager viewPager;
     @BindView(R.id.drawer_layout) DrawerLayout drawerLayout;

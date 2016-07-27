@@ -17,20 +17,12 @@
             android:id="@+id/find_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:gravity="center"
             android:background="?attr/colorPrimary"
             android:contentInsetStart="0dp"
             android:contentInsetLeft="0dp"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/accent"
-                android:text="윤재네 닭갈비" />
-
+            app:title="@null"
+            app:titleTextColor="@color/accent">
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>

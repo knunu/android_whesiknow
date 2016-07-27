@@ -77,15 +77,11 @@ public class FindActivity extends AppCompatActivity {
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "양식"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "일식"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "기타"));
 
         recyclerView.setAdapter(new ExpandableListAdapter(data));
     }
 
     private void find() {
-        startActivity(new Intent(FindActivity.this, ReserveActivity.class));
+        startActivity(new Intent(FindActivity.this, MapActivity.class));
     }
 }
