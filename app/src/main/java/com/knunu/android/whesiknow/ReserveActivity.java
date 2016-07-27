@@ -3,13 +3,16 @@ package com.knunu.android.whesiknow;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.GridLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ReserveActivity extends AppCompatActivity {
 
     @BindView(R.id.find_toolbar) Toolbar toolbar;
+    @OnClick()
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,4 +24,6 @@ public class ReserveActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+
 }

@@ -130,17 +130,11 @@
                         android:layout_gravity="left"
                         android:layout_margin="5dp" />
 
-                    <Button
+                    <Switch
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="오늘"
-                        android:id="@+id/button4" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:text="내일"
-                        android:id="@+id/button5" />
+                        android:textOff="오늘"
+                        android:textOn="내일"/>
 
                 </LinearLayout>
 

@@ -67,24 +67,19 @@
             android:label="@string/title_activity_nearby" />
         <activity
             android:name=".DetailInfoActivity"
-            android:label="@string/title_activity_detail_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_detail_info" />
         <activity
             android:name=".DetailInfo2Activity"
-            android:label="@string/title_activity_detail_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_detail_info" />
         <activity
             android:name=".DetailInfo3Activity"
-            android:label="@string/title_activity_detail_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_detail_info" />
         <activity
             android:name=".DetailInfo4Activity"
-            android:label="@string/title_activity_detail_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_detail_info" />
         <activity
             android:name=".DetailInfo5Activity"
-            android:label="@string/title_activity_detail_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_detail_info" />
         <activity android:name=".ReserveActivity" />
         <activity android:name=".KakaoSignupActivity" />
         <activity
@@ -99,7 +94,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SuccessActivity" />
-        <activity android:name=".ConditionalReserveActivity"></activity>
+        <activity android:name=".ConditionalReserveActivity" />
+        <activity android:name=".DepositActivity" />
+        <activity android:name=".HistoryActivity"></activity>
     </application>
 
 </manifest>
