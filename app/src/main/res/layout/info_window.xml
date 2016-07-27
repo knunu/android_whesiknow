@@ -37,24 +37,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_gravity="center" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="예약"
-            android:clickable="true"
-            android:id="@+id/iw_button" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="상세 정보"
-            android:clickable="true"
-            android:id="@+id/iw_button2" />
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상세 정보"
+        android:clickable="true"
+        android:id="@+id/iw_button" />
 </LinearLayout>

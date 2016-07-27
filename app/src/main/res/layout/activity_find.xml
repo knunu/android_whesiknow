@@ -22,7 +22,9 @@
             android:contentInsetStart="0dp"
             android:contentInsetLeft="0dp"
             app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp">
+            app:contentInsetStart="0dp"
+            app:titleTextColor="@color/accent"
+            app:title="검색">
 
             <SearchView
                 android:id="@+id/search_view"
@@ -37,163 +39,137 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-            android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-            android:focusableInTouchMode="false">
-
-            <LinearLayout
-                android:orientation="vertical"
+            <FrameLayout
+                android:id="@+id/condition_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayout"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true">
-                <TextView
+                android:padding="10dp">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="바로 검색 조건 입력"
-                    android:textSize="35dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:layout_gravity="center_horizontal" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
 
-            <LinearLayout
-                android:id="@+id/condition_layout"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="70dp">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_height="30dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary"
                         android:text="인원"
                         android:id="@+id/textView8"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/abc_primary_text_material_light"
-                        android:layout_gravity="left"
-                        android:layout_margin="5dp"
-                        android:paddingRight="140dp" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:inputType="numberDecimal"
-                        android:ems="10"
-                        android:hint="회식 인원"
-                        android:id="@+id/editText"
-                        android:layout_gravity="bottom" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
+                        android:layout_margin="5dp" />
 
                     <TextView
-                        android:layout_width="164dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary"
                         android:text="날짜"
                         android:id="@+id/textView9"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/abc_primary_text_material_light"
-                        android:layout_gravity="left"
                         android:layout_margin="5dp" />
 
-                    <Switch
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:textOff="오늘"
-                        android:textOn="내일"/>
+                        android:layout_height="30dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary"
+                        android:text="시간"
+                        android:id="@+id/textView10"
+                        android:layout_margin="5dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
+                    android:orientation="vertical"
+                    android:layout_gravity="right"
+                    android:gravity="right">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="시간"
-                        android:id="@+id/textView10"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/abc_primary_text_material_light"
-                        android:layout_gravity="left"
-                        android:layout_margin="5dp" />
+                        android:inputType="numberDecimal"
+                        android:hint="회식 인원"
+                        android:id="@+id/countText"
+                        android:textColor="@color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:checkedButton="@+id/today"
+                        android:id="@+id/toggle"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/out_line"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <RadioButton
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginLeft="1dp"
+                            android:id="@+id/search"
+                            android:background="@drawable/toggle_widget_background"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="오늘"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:layout_marginRight="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:id="@+id/tomorrow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/toggle_widget_background"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="내일"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+
+                    <EditText
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="select time▽"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/primary"
-                        android:id="@+id/textView12"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        />
-
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black"
+                        android:hint="18:00-20:00"
+                        android:layout_marginTop="5dp" />
                 </LinearLayout>
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/inner_container"
+         </FrameLayout>
+        <FrameLayout
+            android:id="@+id/inner_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/condition_layout">
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
-            </FrameLayout>
-        </RelativeLayout>
+                android:padding="5dp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/find"
-            android:id="@+id/find_button"
-            android:layout_gravity="center_horizontal|bottom" />
-    </FrameLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/find"
+                android:id="@+id/find_button"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+    </LinearLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>
 

@@ -96,7 +96,8 @@
         <activity android:name=".SuccessActivity" />
         <activity android:name=".ConditionalReserveActivity" />
         <activity android:name=".DepositActivity" />
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".ConditionActivity"></activity>
     </application>
 
 </manifest>

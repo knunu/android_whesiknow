@@ -39,7 +39,7 @@
             android:id="@+id/depositinfo"
             android:textStyle="bold"
             android:textSize="13dp"
-            android:textColor="#B2CCFF"
+            android:textColor="@color/primary"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -68,7 +68,7 @@
             android:id="@+id/payby"
             android:textStyle="bold"
             android:textSize="13dp"
-            android:textColor="#B2CCFF"
+            android:textColor="@color/primary"
             android:layout_above="@+id/linearLayout2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -90,7 +90,7 @@
             android:id="@+id/amount"
             android:textStyle="bold"
             android:textSize="13dp"
-            android:textColor="#B2CCFF"
+            android:textColor="@color/primary"
             android:layout_below="@+id/textView14"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -159,7 +159,6 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="좌석당 디파짓 가격"
                 android:textSize="15dp"
-                android:id="@+id/price"
                 android:textColor="@color/black"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -170,7 +169,6 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="총 예약 좌석 수"
-                android:id="@+id/seat"
                 android:textSize="15dp"
                 android:textColor="@color/black"
                 android:layout_alignParentLeft="true"
@@ -182,17 +180,11 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="총 결제 금액"
-                android:id="@+id/all"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginBottom="5dp"/>
-
-
-
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -208,7 +200,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="1000원"
                 android:textSize="15dp"
-                android:id="@+id/price2"
+                android:id="@+id/price"
                 android:textColor="@color/black"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -218,8 +210,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="12석"
-                android:id="@+id/seat2"
+                android:text="@null"
+                android:id="@+id/seat"
                 android:textSize="15dp"
                 android:textColor="@color/black"
                 android:layout_alignParentLeft="true"
@@ -230,14 +222,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="12000원"
-                android:id="@+id/all2"
+                android:text="@null"
+                android:id="@+id/total"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginBottom="5dp"/>
-
         </LinearLayout>
 
     </RelativeLayout>

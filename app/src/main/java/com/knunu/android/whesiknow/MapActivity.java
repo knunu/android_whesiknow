@@ -195,8 +195,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             TextView iw_label = (TextView) v.findViewById(R.id.iw_textView);
             TextView iw_label2 = (TextView)v.findViewById(R.id.iw_textView2);
             TextView iw_label3 = (TextView)v.findViewById(R.id.iw_textView3);
-            Button iw_button = (Button)v.findViewById(R.id.iw_button);
-            Button iw_button2 = (Button)v.findViewById(R.id.iw_button2);
 
             final String activityName = "map";
             final String shopName = valueMap.get(marker).get("iw_label");
@@ -236,46 +234,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 }
             };
             googleMap.setOnInfoWindowClickListener(windowClickListener);
-
-            iw_button.setOnClickListener(new View.OnClickListener() {
-                @Override // 상세 정보
-                public void onClick(View v) {
-                    Intent intent = null;
-
-                    switch (shopName) {
-                        case "윤재네 닭갈비":
-                            intent = new Intent(getApplicationContext(), DetailInfoActivity.class);
-                            break;
-                        case "선우네 족발":
-                            intent = new Intent(getApplicationContext(), DetailInfo2Activity.class);
-                            break;
-                        case "원경쓰 치맥":
-                            intent = new Intent(getApplicationContext(), DetailInfo3Activity.class);
-                            break;
-                        case "수민의 콩불":
-                            intent = new Intent(getApplicationContext(), DetailInfo4Activity.class);
-                            break;
-                        case "용산 보쌈":
-                            intent = new Intent(getApplicationContext(), DetailInfo5Activity.class);
-                            break;
-                        default:
-                            break;
-                    }
-                    intent.putExtra("activityName", activityName);
-                    intent.putExtra("shopName", shopName);
-                    startActivity(intent);
-                }
-            });
-
-            iw_button2.setOnClickListener(new View.OnClickListener() {
-                @Override // 예약
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), ReserveActivity.class);
-                    intent.putExtra("activityName", activityName);
-                    intent.putExtra("shopName", shopName);
-                    startActivity(intent);
-                }
-            });
 
             return v;
         }

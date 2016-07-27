@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.viewpager) ViewPager viewPager;
     @BindView(R.id.drawer_layout) DrawerLayout drawerLayout;
     @BindView(R.id.navigation_view) NavigationView navigationView;
-    @OnClick(R.id.floating_action_button) void onFabClicked() { redirectMap(); }
+    @OnClick(R.id.floating_action_button) void onFabClicked() { redirectCondition(); }
     @BindString(R.string.recommend_theme) String _recommend_theme;
     @BindString(R.string.event) String _event;
     @BindString(R.string.rank) String _rank;
@@ -82,12 +82,11 @@ public class MainActivity extends AppCompatActivity {
 
         switch(item.getItemId()){
             case R.id.check_reservation_button:
-                text = "개인 예약 내역, 준비 중";
+                startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                 break;
             default:
                 return false;
         }
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
         return true;
     }
 
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.drawer_home:
                         break;
                     case R.id.drawer_reservation:
-                        Toast.makeText(MainActivity.this, "예약 관리 페이지, 준비 중", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                         break;
                     case R.id.drawer_personal_data:
                         Toast.makeText(MainActivity.this, "개인 정보 페이지, 준비 중", Toast.LENGTH_SHORT).show();
@@ -204,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void redirectMap() {
-        Intent intent = new Intent(MainActivity.this, MapActivity.class);
+    private void redirectCondition() {
+        Intent intent = new Intent(MainActivity.this, ConditionActivity.class);
         startActivity(intent);
     }
 

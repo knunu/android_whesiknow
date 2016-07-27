@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="검색하기"
-        android:id="@+id/button" />
+        android:id="@+id/main_find_button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1위 선우네 족발"
+                android:text="1위. 선우네 족발"
                 android:fontFamily=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black"
@@ -40,7 +40,7 @@
                 android:textStyle="bold"
                 android:id="@+id/textView" />
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/pig_feets"
                 android:layout_width="400dp"
                 android:layout_height="150dp"
                 android:src="@drawable/rank2"
@@ -49,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2위 수민이 콩불"
+                android:text="2위. 수민이 콩불"
                 android:fontFamily=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black"
@@ -58,7 +58,7 @@
                 android:id="@+id/textView2"
                 android:paddingTop="10dp" />
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/bulgogi"
                 android:layout_width="400dp"
                 android:layout_height="150dp"
                 android:src="@drawable/rank3"
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3위 윤재네 닭갈비"
+                android:text="3위. 윤재네 닭갈비"
                 android:fontFamily=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black"
@@ -76,7 +76,7 @@
                 android:id="@+id/textView3"
                 android:paddingTop="10dp" />
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/spicy_grilled_chicken"
                 android:layout_width="400dp"
                 android:layout_height="150dp"
                 android:src="@drawable/rank1"
@@ -85,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4위 원경쓰 치맥"
+                android:text="4위. 원경쓰 치맥"
                 android:fontFamily=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black"
@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5위 용산보쌈"
+                android:text="5위. 용산보쌈"
                 android:fontFamily=""
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -105,7 +105,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6위 FC삼겹살"
+                android:text="6위. FC삼겹살"
                 android:fontFamily=""
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceMedium"

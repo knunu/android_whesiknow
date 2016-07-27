@@ -17,7 +17,7 @@ public class DetailInfo4Activity extends AppCompatActivity {
         String activityName = getIntent().getStringExtra("activityName");
         String shopName = getIntent().getStringExtra("shopName");
 
-        if (activityName.equals("Map")) {
+        if (activityName.equals("map")) {
             intent = new Intent(this, ReserveActivity.class);
         } else {
             intent = new Intent(this, ConditionalReserveActivity.class);

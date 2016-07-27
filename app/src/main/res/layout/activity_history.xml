@@ -41,14 +41,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="현재 예약 건수: 2건"
-            android:textColor="@color/black"
-            android:id="@+id/textView15"
+            android:textColor="@color/primary"
+            android:id="@+id/current_reservation_count"
             android:textStyle="bold"
             android:textSize="20dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp" />
-
-
 
         <LinearLayout
             android:orientation="horizontal"
@@ -58,7 +56,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:id="@+id/history_layout">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -116,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="취소하기"
-            android:id="@+id/button5"
+            android:id="@+id/cancel"
             android:layout_gravity="right" />
 
 
@@ -128,7 +127,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="5dp"
+            android:id="@+id/history_layout2">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -186,14 +186,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="취소하기"
-            android:id="@+id/button6"
+            android:id="@+id/cancel2"
             android:layout_gravity="right" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="홈으로 가기"
-            android:id="@+id/button7"
+            android:id="@+id/home"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp" />
 
