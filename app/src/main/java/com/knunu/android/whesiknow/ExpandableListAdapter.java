@@ -12,7 +12,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,16 +50,6 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                 ViewGroup.LayoutParams.MATCH_PARENT,
                                 ViewGroup.LayoutParams.WRAP_CONTENT));
                 return new RecyclerView.ViewHolder(itemCheckBox) {};
-
-//                TextView itemTextView = new TextView(context);
-//                itemTextView.setPadding(subItemPaddingLeft, subItemPaddingTopAndBottom, 0, subItemPaddingTopAndBottom);
-//                itemTextView.setTextColor(0x88000000);
-//                itemTextView.setLayoutParams(
-//                        new ViewGroup.LayoutParams(
-//                                ViewGroup.LayoutParams.MATCH_PARENT,
-//                                ViewGroup.LayoutParams.WRAP_CONTENT));
-//                return new RecyclerView.ViewHolder(itemTextView) {
-//                };
         }
         return null;
     }
@@ -110,7 +99,9 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 itemCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
                         item.isChecked = isChecked;
+
                     }
                 });
                 break;

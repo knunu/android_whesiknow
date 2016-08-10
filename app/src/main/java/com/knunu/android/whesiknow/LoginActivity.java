@@ -253,6 +253,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 // TODO: Implement your own authentication logic here.
                                 Call<List<User>> getUserObjectCall = RestfulAdapter.getInstance().getUser(user_token, Constant.FACEBOOK, null);
+                                // enqueue를 호출하게 되면서 이 부분은 Asynchronous하게 작동된다!
                                 getUserObjectCall.enqueue(new Callback<List<User>>() {
                                     @Override
                                     public void onResponse(Call<List<User>> call, Response<List<User>> response) {
@@ -261,6 +262,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                         if (userObject == null) {
                                             // TODO: Implement your own signup logic here.
+                                            // RESTful API중 user를 입력하기 위해 post method를 사용하는 부분, retrofit2를 이용해서 구현했기 때문에 학습 필요
                                             Call<User> postUserObjectCall = RestfulAdapter.getInstance().postUser(user_token, Constant.FACEBOOK, null, name);
                                             postUserObjectCall.enqueue(new Callback<User>() {
                                                 @Override

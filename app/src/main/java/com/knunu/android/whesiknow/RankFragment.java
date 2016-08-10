@@ -22,7 +22,7 @@ public class RankFragment extends Fragment {
         intent.putExtra("activityName", "rank");
         intent.putExtra("shopName", "윤재네 닭갈비");
         startActivity(intent); }
-    @OnClick({R.id.pig_feets, R.id.pig_feets2}) void onPigsFeetClick() {
+    @OnClick(R.id.pig_feets) void onPigsFeetClick() {
         Intent intent = new Intent(getActivity(), DetailInfo2Activity.class);
         intent.putExtra("activityName", "rank");
         intent.putExtra("shopName", "선우네 족발");

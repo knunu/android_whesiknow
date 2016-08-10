@@ -71,6 +71,7 @@ public class FindActivity extends AppCompatActivity {
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "대구"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "부산"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "울산"));
+
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음식 종류"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "한식"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "중식"));

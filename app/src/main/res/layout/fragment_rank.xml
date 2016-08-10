@@ -49,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2위. 수민이 콩불"
+                android:text="2위. 수민의 콩불"
                 android:fontFamily=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black"
@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5위. 용산보쌈"
+                android:text="5위. 용산 보쌈"
                 android:fontFamily=""
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -105,7 +105,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6위. FC삼겹살"
+                android:text="6위. FC 삼겹살"
                 android:fontFamily=""
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceMedium"
